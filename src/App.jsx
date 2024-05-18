@@ -10,6 +10,7 @@ import Basket from "./pages/Basket"
 import Categorie from "./pages/Categorie"
 import {ProductsProvider} from "./context/ProductsContext"
 import {BasketProvider} from "./context/BasketContext"
+import {MenuMobileProvider} from "./context/MenuMobileContext"
 
 const router = createBrowserRouter([
 	{
@@ -29,7 +30,9 @@ function App() {
 	return (
 		<ProductsProvider>
 			<BasketProvider>
-				<RouterProvider router={router} />
+				<MenuMobileProvider>
+					<RouterProvider router={router} />
+				</MenuMobileProvider>
 			</BasketProvider>
 		</ProductsProvider>
 	)

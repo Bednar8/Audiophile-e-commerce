@@ -12,7 +12,11 @@ function Categorie() {
 	const {handleAddToBasket, handleRemoveFromBasket} = useBasket()
 
 	if (isLoading) return <Spinner />
-	if (!categories.includes(currentCategorie.categorieName))
+	if (
+		!categories.some(
+			(categorie) => categorie.name !== currentCategorie.categorieName
+		)
+	)
 		return <div>Page not found</div>
 
 	return (

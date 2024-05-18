@@ -8,7 +8,7 @@ function Header() {
 	return (
 		<header
 			className={`bg-[url(/src/assets/home/mobile/image-header.jpg)] bg-cover bg-center w-full h-dvh`}>
-			<div className="max-w-[1100px] mx-auto h-full">
+			<div className="max-w-[1100px] mx-auto">
 				<Nav />
 			</div>
 		</header>
