@@ -4,12 +4,16 @@ import {useProducts} from "../context/ProductsContext"
 import Spinner from "../components/Spinner"
 import {useBasket} from "../context/BasketContext"
 
+import {categories} from "../config"
+
 function Categorie() {
 	const currentCategorie = useParams()
 	const {products, isLoading} = useProducts()
 	const {handleAddToBasket, handleRemoveFromBasket} = useBasket()
 
 	if (isLoading) return <Spinner />
+	if (!categories.includes(currentCategorie.categorieName))
+		return <div>Page not found</div>
 
 	return (
 		<div className="flex gap-2">
