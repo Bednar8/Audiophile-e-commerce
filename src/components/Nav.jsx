@@ -5,7 +5,7 @@ import logoImg from "../assets/shared/desktop/logo.svg"
 import burgerIcon from "../assets/shared/tablet/icon-hamburger.svg"
 import cartIcon from "../assets/shared/desktop/icon-cart.svg"
 import {useMenuMobile} from "../context/MenuMobileContext"
-import MenuMobile from "./MenuMobile"
+// import MenuMobile from "./MenuMobile"
 
 function Nav() {
 	const {handleMenu} = useMenuMobile()
@@ -13,7 +13,6 @@ function Nav() {
 	return (
 		<>
 			<nav className="fixed flex justify-between text-white h-[100px]  border-b-[1px] border-b-[#979797] w-full max-sm:m-0 z-40">
-				<MenuMobile />
 				<button
 					className="pr-4 md:mr-10 lg:hidden max-sm:p-3 max-sm:m-2"
 					onClick={handleMenu}>
