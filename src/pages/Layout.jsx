@@ -10,18 +10,17 @@ function Layout() {
 
 	return (
 		<>
-			<div>
+			<div className="w-full">
 				{isMenuOpen && (
 					<div className="fixed inset-0 w-dvw h-dvh bg-[#00000558] z-10"></div>
 				)}
 				<Nav />
-				<Header />
 				<MenuMobile />
+				<Header />
 				<main>
 					<Outlet />
 				</main>
 				<Footer />
-				<br />
 				<br />
 				<br />
 				<br />
