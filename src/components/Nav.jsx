@@ -24,9 +24,6 @@ function Nav() {
 		} else {
 			setIsNavShow(true)
 		}
-
-		console.log("current:" + currentScrollY)
-		console.log("last:" + lastYPos)
 		setLastYPos(currentScrollY)
 	}
 

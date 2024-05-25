@@ -1,7 +1,7 @@
 import {categories} from "../config"
 import {useMenuMobile} from "../context/MenuMobileContext"
 
-import MenuMobileItem from "./MenuMobileItem"
+import CategorieItem from "./CategorieItem"
 
 function MenuMobile() {
 	const {isMenuOpen} = useMenuMobile()
@@ -14,9 +14,9 @@ function MenuMobile() {
 			className={`${
 				isMenuOpen && "left-[0]"
 			} menu-container max-h-[750px] fixed left-[-120%] top-[100px] z-30  w-full transition-all overflow-y-auto`}>
-			<div className="absolute items-center w-full bg-white h-max">
+			<div className="absolute flex flex-col items-center w-full bg-white h-max rounded-br-xl rounded-bl-xl md:flex-row md:py-10">
 				{categories.map((categorie, i) => (
-					<MenuMobileItem categorie={categorie} key={i} />
+					<CategorieItem categorie={categorie} key={i} />
 				))}
 			</div>
 		</div>
