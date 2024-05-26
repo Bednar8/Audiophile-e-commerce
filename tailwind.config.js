@@ -6,7 +6,7 @@ export default {
 			colors: {
 				orange: {
 					main: "#D87D4A",
-					secondary: "FBAF85",
+					secondary: "#FBAF85",
 				},
 				black: {
 					secondary: "#101010",

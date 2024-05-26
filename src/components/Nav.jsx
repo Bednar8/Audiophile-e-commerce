@@ -7,6 +7,7 @@ import logoImg from "../assets/shared/desktop/logo.svg"
 import burgerIcon from "../assets/shared/tablet/icon-hamburger.svg"
 import cartIcon from "../assets/shared/desktop/icon-cart.svg"
 import {useMenuMobile} from "../context/MenuMobileContext"
+
 function Nav() {
 	const {handleMenu} = useMenuMobile()
 	const [isNavShow, setIsNavShow] = useState(false)
@@ -98,5 +99,3 @@ function Nav() {
 }
 
 export default Nav
-
-// "fixed  top-0 left-0 items-center text-white h-[100px] w-full z-40 ">
