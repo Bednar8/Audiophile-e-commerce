@@ -17,7 +17,6 @@ function Layout() {
 				<Nav />
 				<CategorieList isMenuMobile={true} />
 				<Header />
-				<CategorieList />
 				<main>
 					<Outlet />
 				</main>
