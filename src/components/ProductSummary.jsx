@@ -10,7 +10,7 @@ function ProductSummary({name, desc, imgUrl, isNew = false}) {
 			<h3 className="text-4xl font-[600] tracking-wider uppercase md:text-[56px] md:leading-[3.5rem]">
 				{name}
 			</h3>
-			<p className="my-6 font-light opacity-75 xl:max-w-[380px] text-center">
+			<p className="my-6 font-light opacity-75 xl:max-w-[380px] text-center xl:text-left">
 				{desc}
 			</p>
 		</div>
