@@ -10,6 +10,8 @@ function ButtonLink({children, type = "primary", onClick}) {
 					? "bg-orange-main text-white hover:bg-orange-secondary"
 					: type == "black"
 					? "bg-black-secondary text-white hover:bg-[#4C4C4C]"
+					: type == "transparent"
+					? "bg-transparent text-black-secondary border border-black-secondary hover:bg-black-secondary hover:text-white"
 					: ""
 			}`}>
 			{children}

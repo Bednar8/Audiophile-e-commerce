@@ -1,9 +1,10 @@
 import {Outlet} from "react-router-dom"
 import Footer from "../components/Footer"
-import Header from "../components/Header"
+
 import {useMenuMobile} from "../context/MenuMobileContext"
 import Nav from "../components/Nav"
 import CategorieList from "../components/CategorieList"
+import AboutAudiphile from "../components/AboutAudiphile"
 
 function Layout() {
 	const {isMenuOpen} = useMenuMobile()
@@ -16,10 +17,11 @@ function Layout() {
 				)}
 				<Nav />
 				<CategorieList isMenuMobile={true} />
-				<Header />
+
 				<main>
 					<Outlet />
 				</main>
+				<AboutAudiphile />
 				<Footer />
 			</div>
 		</>
