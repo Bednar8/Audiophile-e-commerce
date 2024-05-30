@@ -45,7 +45,9 @@ function ProductWithBg() {
 						name="ZX9 SPEAKER"
 						desc="Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
 					/>
-					<ButtonLink type="black">see product</ButtonLink>
+					<ButtonLink type="black" productId={6}>
+						see product
+					</ButtonLink>
 				</div>
 			</div>
 		</div>

@@ -13,7 +13,9 @@ HeadphoneS"
 						desc="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
 						isNew={true}
 					/>
-					<ButtonLink type="primary">see product</ButtonLink>
+					<ButtonLink type="primary" productId={2}>
+						see product
+					</ButtonLink>
 				</div>
 			</div>
 		</header>
