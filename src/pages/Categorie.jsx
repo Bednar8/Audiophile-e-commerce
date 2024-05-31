@@ -2,14 +2,16 @@ import {Link, useParams} from "react-router-dom"
 import {useProducts} from "../context/ProductsContext"
 
 import Spinner from "../components/Spinner"
-import {useBasket} from "../context/BasketContext"
+// import {useBasket} from "../context/BasketContext"
 
 import {categories} from "../config"
+import ProductOverview from "../components/ProductOverview"
+import CategorieList from "../components/CategorieList"
 
 function Categorie() {
 	const currentCategorie = useParams()
 	const {products, isLoading} = useProducts()
-	const {handleAddToBasket, handleRemoveFromBasket} = useBasket()
+	// const {handleAddToBasket, handleRemoveFromBasket} = useBasket()
 
 	if (isLoading) return <Spinner />
 	if (
@@ -20,29 +22,31 @@ function Categorie() {
 		return <div>Page not found</div>
 
 	return (
-		<div className="flex gap-2">
-			categorie {currentCategorie.categorieName}
-			{products.map((product) => (
-				<div key={product.id}>
-					<Link to={`/product/${product.id}`}>{product.name}</Link>
-					<button
-						className="bg-orange-main"
-						onClick={() => {
-							console.log(product)
-							handleAddToBasket(product)
-						}}>
-						add to basket
-					</button>
-					<button
-						className="mt-3 bg-gray-main"
-						onClick={() => {
-							console.log(product)
-							handleRemoveFromBasket(product)
-						}}>
-						remove from basket
-					</button>
-				</div>
-			))}
+		<div>
+			<div className="h-[200px] md:h-[330px] bg-black-secondary text-white flex justify-center items-end">
+				<h2 className="mb-8 text-3xl font-bold tracking-wide uppercase md:mb-[6.5rem] md:text-4xl">
+					{currentCategorie.categorieName}
+				</h2>
+			</div>
+			<div className="mx-auto max-w-[1200px] flex flex-col items-center justify-center">
+				{products
+					.filter(
+						(product) => product.category == currentCategorie.categorieName
+					)
+					.sort((a, b) => {
+						if (a.new === true && b.new !== true) {
+							return -1
+						}
+						if (a.new !== true && b.new === true) {
+							return 1
+						}
+						return 0
+					})
+					.map((product, i) => (
+						<ProductOverview key={i} product={product} index={i} />
+					))}
+			</div>
+			<CategorieList />
 		</div>
 	)
 }
