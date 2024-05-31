@@ -46,7 +46,7 @@ function Nav() {
 						: isNavShow
 						? "top-0 bg-black-secondary"
 						: "top-[-100px]"
-				} nav fixed left-0 items-center text-white h-[100px] w-full z-40`}>
+				}  nav fixed left-0 items-center text-white h-[100px] w-full z-40`}>
 				<div
 					className={`${
 						isScrollZero ? "after:w-full  after:px-4" : "after:w-0"

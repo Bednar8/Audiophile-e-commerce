@@ -2,6 +2,8 @@ import {useParams} from "react-router-dom"
 import {useProducts} from "../context/ProductsContext"
 import Spinner from "../components/Spinner"
 
+import ProductMainOverview from "../components/ProductMainOverview"
+
 function Product() {
 	const params = useParams()
 	const {products, isLoading} = useProducts()
@@ -13,7 +15,15 @@ function Product() {
 
 	console.log(currentProduct)
 
-	return <div>product{params.productId}</div>
+	return (
+		<div>
+			<div className="h-[100px] bg-black-secondary w-full"></div>
+			product{params.productId}
+			<div className="max-w-[1200px] mx-auto">
+				{currentProduct && <ProductMainOverview product={currentProduct} />}
+			</div>
+		</div>
+	)
 }
 
 export default Product

@@ -21,7 +21,6 @@ function ProductOverview({product, index}) {
 				alt={product.name}
 				className="w-full h-[352px] object-cover rounded-xl xl:w-1/2 xl:h-[550px]"
 			/>
-			{console.log(index + 1)}
 			<div className="flex flex-col items-center justify-center xl:w-1/2 xl:items-start">
 				{product.new && (
 					<p className="tracking-[10px] opacity-50 text-sm uppercase text-orange-main mt-8">
