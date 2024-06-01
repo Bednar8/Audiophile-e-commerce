@@ -31,7 +31,9 @@ function ProductMainOverview({product}) {
 				<p className="opacity-50 text-[15px] mt-6 md:max-w-[570px] text-start">
 					{product.description}
 				</p>
-				<p className="my-6 text-lg font-bold">${product.price}</p>
+				<p className="my-6 text-lg font-bold">
+					$ {product.price.toLocaleString("en-US")}
+				</p>
 				<div className="flex items-center justify-start">
 					<QuantityButton />
 					<ButtonLink
