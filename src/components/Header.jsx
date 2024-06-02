@@ -13,7 +13,7 @@ HeadphoneS"
 						desc="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
 						isNew={true}
 					/>
-					<ButtonLink type="primary" productId={2}>
+					<ButtonLink type="primary" productSlug={"xx99-mark-two-headphones"}>
 						see product
 					</ButtonLink>
 				</div>

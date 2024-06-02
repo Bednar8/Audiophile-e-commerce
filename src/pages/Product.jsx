@@ -5,23 +5,22 @@ import Spinner from "../components/Spinner"
 import ProductMainOverview from "../components/ProductMainOverview"
 import Features from "../components/Features"
 import InTheBox from "../components/InTheBox"
-import ProductPageImages from "../components/ProductPageImages"
+import ProductGallery from "../components/ProductGallery"
+import OtherProducts from "../components/OtherProducts"
+import CategorieList from "../components/CategorieList"
 
 function Product() {
 	const params = useParams()
 	const {products, isLoading} = useProducts()
 	const currentProduct = products.filter(
-		(product) => product.id === params.productId
+		(product) => product.slug === params.productSlug
 	)[0]
 
 	if (isLoading) return <Spinner />
 
-	console.log(currentProduct)
-
 	return (
 		<div>
 			<div className="h-[100px] bg-black-secondary w-full"></div>
-			product{params.productId}
 			<div className="max-w-[1200px] mx-auto">
 				{currentProduct && (
 					<>
@@ -29,8 +28,10 @@ function Product() {
 						<div className="flex flex-col justify-center gap-16 xl:flex-row">
 							<Features product={currentProduct} />
 							<InTheBox product={currentProduct} />
-							<ProductPageImages product={currentProduct} />
 						</div>
+						<ProductGallery product={currentProduct} />
+						<OtherProducts product={currentProduct} />
+						<CategorieList />
 					</>
 				)}
 			</div>

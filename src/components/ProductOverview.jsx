@@ -33,7 +33,7 @@ function ProductOverview({product, index}) {
 				<p className="opacity-50 text-[15px] text-center my-6 md:max-w-[570px] xl:text-start">
 					{product.description}
 				</p>
-				<ButtonLink type="primary" productId={product.id}>
+				<ButtonLink type="primary" productSlug={product.slug}>
 					see product
 				</ButtonLink>
 			</div>

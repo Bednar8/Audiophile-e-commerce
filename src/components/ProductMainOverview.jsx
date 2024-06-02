@@ -7,7 +7,7 @@ function ProductMainOverview({product}) {
 	const isDesktop = useMediaQuery({query: "(min-width: 1280px)"})
 
 	return (
-		<div className="flex flex-col items-center justify-center gap-16 mx-4 my-14 md:mx-8 md:flex-row xl:gap-32">
+		<div className="flex flex-col items-center justify-center gap-16 mx-4 my-14 md:mx-8 md:flex-row xl:gap-32 xl:mb-40">
 			<img
 				src={
 					isDesktop

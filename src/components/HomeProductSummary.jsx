@@ -10,7 +10,7 @@ function HomeProductSummary({name}) {
 			<div
 				className={`bg-[url(/src/assets/home/mobile/image-speaker-zx7.jpg)] md:bg-[url(/src/assets/home/tablet/image-speaker-zx7.jpg)] h-full  bg-cover mx-4 md:mx-8 bg-center rounded-xl flex flex-col justify-center p-6 md:p-16 xl:bg-[url(/src/assets/home/desktop/image-speaker-zx7.jpg)]`}>
 				<h3 className="mb-8 text-3xl font-bold uppercase">{name}</h3>
-				<ButtonLink type="transparent" productId={5}>
+				<ButtonLink type="transparent" productSlug={"zx7-speaker"}>
 					see product
 				</ButtonLink>
 			</div>
