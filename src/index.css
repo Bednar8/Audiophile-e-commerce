@@ -24,3 +24,8 @@ body {
 	transition: fill 0.2s;
 	fill: #d87d4a;
 }
+
+.category-item:hover .category-span {
+	color: #d87d4a;
+	transition: color 0.2s;
+}

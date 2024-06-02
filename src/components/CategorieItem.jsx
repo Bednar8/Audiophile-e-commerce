@@ -7,7 +7,7 @@ function CategorieItem({categorie}) {
 		<div className="relative flex items-center justify-center mx-4 h-[150px] my-10 last:mb-12 w-full max-md:first:mt-16">
 			<Link
 				to={`/categorie/${categorie.name}`}
-				className="z-0 flex flex-col items-center justify-end w-full h-full mx-4 my-6 text-black-secondary bg-gray-main last:mb-0 rounded-xl">
+				className="z-0 flex flex-col items-center justify-end w-full h-full mx-4 my-6 category-item text-black-secondary bg-gray-main last:mb-0 rounded-xl">
 				<img
 					src={categorie.imageUrl}
 					alt=""
@@ -17,7 +17,7 @@ function CategorieItem({categorie}) {
 					{categorie.name}
 				</p>
 				<p className="flex items-center mb-4 uppercase">
-					<span>shop</span> <img src={arrowIcon} alt="" className="ml-2" />
+					<span className="category-span">shop</span> <img src={arrowIcon} alt="" className="ml-2" />
 				</p>
 			</Link>
 		</div>
