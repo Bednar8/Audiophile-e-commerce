@@ -6,9 +6,6 @@ import CategorieItem from "./CategorieItem"
 function CategorieList({isMenuMobile = false}) {
 	const {isMenuOpen} = useMenuMobile()
 
-	if (isMenuOpen) document.body.style.overflowY = "hidden"
-	else document.body.style.overflowY = "auto"
-
 	return (
 		<>
 			{isMenuMobile && (

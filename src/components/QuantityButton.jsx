@@ -1,6 +1,9 @@
-function QuantityButton() {
+function QuantityButton({small = false}) {
 	return (
-		<div className="flex items-center justify-between bg-gray-main w-[120px] h-[48px] mr-4">
+		<div
+			className={`${
+				small ? "h-9 w-24" : "w-[120px] h-[48px]"
+			} flex items-center justify-between bg-gray-main `}>
 			<button className="w-full h-full transition-colors hover:text-orange-main">
 				-
 			</button>

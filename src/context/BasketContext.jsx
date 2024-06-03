@@ -5,6 +5,8 @@ export const BasketContext = createContext()
 
 function BasketProvider({children}) {
 	const [productsInBasket, setProductsInBasket] = useState([])
+	const [isBasketOpen, setIsBasketOpen] = useState(false)
+
 	const handleAddToBasket = (product) => {
 		setProductsInBasket((productsInBasket) => [...productsInBasket, product])
 	}
@@ -15,9 +17,19 @@ function BasketProvider({children}) {
 		)
 	}
 
+	const handleBasket = () => {
+		setIsBasketOpen(!isBasketOpen)
+	}
+
 	return (
 		<BasketContext.Provider
-			value={{productsInBasket, handleAddToBasket, handleRemoveFromBasket}}>
+			value={{
+				productsInBasket,
+				handleAddToBasket,
+				handleRemoveFromBasket,
+				handleBasket,
+				isBasketOpen,
+			}}>
 			{children}
 		</BasketContext.Provider>
 	)

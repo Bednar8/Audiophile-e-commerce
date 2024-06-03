@@ -8,6 +8,7 @@ import InTheBox from "../components/InTheBox"
 import ProductGallery from "../components/ProductGallery"
 import OtherProducts from "../components/OtherProducts"
 import CategorieList from "../components/CategorieList"
+import ButtonGoBack from "../components/ButtonGoBack"
 
 function Product() {
 	const params = useParams()
@@ -22,6 +23,9 @@ function Product() {
 		<div>
 			<div className="h-[100px] bg-black-secondary w-full"></div>
 			<div className="max-w-[1200px] mx-auto">
+				<div className="mx-4 mt-4 md:mx-8 md:mt-8 xl:mt-16">
+					<ButtonGoBack />
+				</div>
 				{currentProduct && (
 					<>
 						<ProductMainOverview product={currentProduct} />

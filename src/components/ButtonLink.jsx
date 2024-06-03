@@ -1,10 +1,17 @@
 import {Link} from "react-router-dom"
 
-function ButtonLink({children, type = "primary", productSlug}) {
+function ButtonLink({
+	children,
+	type = "primary",
+	productSlug,
+	isWidthFull = false,
+}) {
 	return (
 		<Link
 			to={`/product/${productSlug}`}
-			className={`relative z-20 w-[160px] h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${
+			className={`${
+				isWidthFull ? "w-full" : "w-[160px]"
+			} relative z-20   h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${
 				type == "primary"
 					? "bg-orange-main text-white hover:bg-orange-secondary"
 					: type == "black"

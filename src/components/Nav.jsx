@@ -7,9 +7,11 @@ import logoImg from "../assets/shared/desktop/logo.svg"
 import burgerIcon from "../assets/shared/tablet/icon-hamburger.svg"
 import cartIcon from "../assets/shared/desktop/icon-cart.svg"
 import {useMenuMobile} from "../context/MenuMobileContext"
+import {useBasket} from "../context/BasketContext"
 
 function Nav() {
 	const {handleMenu} = useMenuMobile()
+	const {handleBasket} = useBasket()
 	const [isNavShow, setIsNavShow] = useState(false)
 	const [lastYPos, setLastYPos] = useState(0)
 	const [isScrollZero, setIsScrollZero] = useState(true)
@@ -87,10 +89,8 @@ function Nav() {
 							</li>
 						))}
 					</ul>
-					<button className="p-3 pl-4 m-2 lg:pr-0">
-						<Link to={"/basket"}>
-							<img src={cartIcon} alt="" className="w-8" />
-						</Link>
+					<button className="p-3 pl-4 m-2 lg:pr-0" onClick={handleBasket}>
+						<img src={cartIcon} alt="" className="w-8" />
 					</button>
 				</div>
 			</nav>

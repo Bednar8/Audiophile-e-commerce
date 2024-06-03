@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 
 import NotFoundPage from "./pages/NotFoundPage"
 import Product from "./pages/Product"
-import Basket from "./pages/Basket"
+import Checkout from "./pages/Checkout"
 import Categorie from "./pages/Categorie"
 import {ProductsProvider} from "./context/ProductsContext"
 import {BasketProvider} from "./context/BasketContext"
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 			{path: "/", element: <Home />},
 			{path: "/categorie/:categorieName", element: <Categorie />},
 			{path: "/product/:productSlug", element: <Product />},
-			{path: "/basket", element: <Basket />},
+			{path: "/checkout", element: <Checkout />},
 		],
 	},
 ])
