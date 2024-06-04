@@ -7,11 +7,12 @@ function Basket() {
 
 	return (
 		<div
-			className={`${
-				isBasketOpen && "right-[0]"
-			} menu-container max-w-[1200px] mx-auto my-8 max-h-[750px] fixed right-[-120%] top-[100px] z-30  w-full transition-all overflow-y-auto`}>
-			<div className="absolute flex flex-col items-center w-full p-4 md:p-8 h-max md:flex-row md:pb-10 max-w-[450px]">
-				<div className="w-full h-full mx-4 bg-white rounded-lg p-7 md:mx-8">
+			className={`menu-container left-[50%] translate-x-[-50%] my-8 max-h-[750px] max-w-[1200px] fixed  top-[70px] z-30  w-full transition-all`}>
+			<div
+				className={`${
+					isBasketOpen ? "right-[0]" : "right-[-120%]"
+				}  absolute   flex flex-col items-center w-full p-4  h-max md:flex-row md:pb-10 max-w-[450px] transition-all`}>
+				<div className="w-full h-full mx-4 bg-white rounded-lg p-7 ">
 					<div className="flex items-center justify-between">
 						<p className="text-lg font-bold uppercase">
 							Cart <span>(3)</span>
