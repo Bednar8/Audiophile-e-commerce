@@ -1,4 +1,4 @@
-import {Outlet} from "react-router-dom"
+import {Outlet, useLocation} from "react-router-dom"
 import Footer from "../components/Footer"
 
 import {useMenuMobile} from "../context/MenuMobileContext"
@@ -10,6 +10,8 @@ import Basket from "../components/Basket"
 import {useBasket} from "../context/BasketContext"
 
 function Layout() {
+	const location = useLocation()
+
 	const {isMenuOpen} = useMenuMobile()
 	const {isBasketOpen} = useBasket()
 
@@ -30,7 +32,8 @@ function Layout() {
 				<main>
 					<Outlet />
 				</main>
-				<AboutAudiphile />
+				{location.pathname !== "/checkout" && <AboutAudiphile />}
+
 				<Footer />
 			</div>
 		</>

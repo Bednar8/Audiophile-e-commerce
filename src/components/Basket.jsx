@@ -7,7 +7,9 @@ function Basket() {
 
 	return (
 		<div
-			className={`menu-container left-[50%] translate-x-[-50%] my-8 max-h-[750px] max-w-[1200px] fixed  top-[70px] z-30  w-full transition-all`}>
+			className={`${
+				isBasketOpen ? "left-[50%] translate-x-[-50%]" : "hidden"
+			} menu-container  my-8 max-h-[750px] max-w-[1200px] fixed  top-[70px] z-30  w-full transition-all`}>
 			<div
 				className={`${
 					isBasketOpen ? "right-[0]" : "right-[-120%]"
@@ -29,7 +31,9 @@ function Basket() {
 						<p className="text-lg font-bold">$ 5,379</p>
 					</div>
 
-					<ButtonLink isWidthFull={true}>Checkout</ButtonLink>
+					<ButtonLink isWidthFull={true} dest="checkout">
+						Checkout
+					</ButtonLink>
 				</div>
 			</div>
 		</div>

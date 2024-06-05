@@ -5,10 +5,20 @@ function ButtonLink({
 	type = "primary",
 	productSlug,
 	isWidthFull = false,
+	dest = "product",
 }) {
+	const getPath = () => {
+		if (dest === "product") {
+			return `/product/${productSlug}`
+		} else if (dest === "checkout") {
+			return `/checkout`
+		} else {
+			return "/"
+		}
+	}
 	return (
 		<Link
-			to={`/product/${productSlug}`}
+			to={getPath()}
 			className={`${
 				isWidthFull ? "w-full" : "w-[160px]"
 			} relative z-20   h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${

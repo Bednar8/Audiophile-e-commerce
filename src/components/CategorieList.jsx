@@ -12,7 +12,7 @@ function CategorieList({isMenuMobile = false}) {
 				<div
 					className={`${
 						isMenuOpen && "left-[0]"
-					} menu-container max-w-[1200px] mx-auto my-8 max-h-[750px] fixed left-[-120%] top-[100px] z-30  w-full transition-all overflow-y-auto`}>
+					} menu-container max-w-[1200px] mx-auto max-h-[750px] fixed left-[-120%] top-[100px] z-30  w-full transition-all overflow-y-auto`}>
 					<div className="absolute flex flex-col items-center w-full bg-white h-max rounded-br-xl rounded-bl-xl md:flex-row md:pb-10 md:pt-16">
 						{categories.map((categorie, i) => (
 							<CategorieItem categorie={categorie} key={i} />
