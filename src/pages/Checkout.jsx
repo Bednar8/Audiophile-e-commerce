@@ -2,6 +2,7 @@ import {useState} from "react"
 import ButtonGoBack from "../components/ButtonGoBack"
 import CheckoutInput from "../components/CheckoutInput"
 import CheckoutCheckbox from "../components/CheckoutCheckbox"
+import Summary from "../components/Summary"
 
 function Checkout() {
 	const [formData, setFormData] = useState()
@@ -97,7 +98,7 @@ function Checkout() {
 			<div className="max-w-[1200px] mx-auto bg-gray-main">
 				<div className="h-full pt-5 pb-24 mx-4">
 					<ButtonGoBack />
-					<div className="p-6 mt-6 bg-white rounded-lg">
+					<div className="p-6 mt-6 bg-white rounded-lg mb-8">
 						<h3 className="mb-8 text-3xl font-bold uppercase">Checkout</h3>
 						<form onSubmit={handleSubmit}>
 							<div>
@@ -159,6 +160,7 @@ function Checkout() {
 									))}
 						</form>
 					</div>
+					<Summary />
 				</div>
 			</div>
 		</div>

@@ -16,6 +16,4 @@ export const categories = [
 	},
 ]
 
-// import earphonesIcon from "../assets/shared/desktop/image-category-thumbnail-earphones.png"
-// import headphonesIcon from "../assets/shared/desktop/image-category-thumbnail-headphones.png"
-// import speakersIcon from "../assets/shared/desktop/image-category-thumbnail-speakers.png"
+export const vat = 23
