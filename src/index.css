@@ -29,3 +29,9 @@ body {
 	color: #d87d4a;
 	transition: color 0.2s;
 }
+
+@media (min-width: 768px) {
+	.checkout-input {
+		width: calc(50% - 8px);
+	}
+}

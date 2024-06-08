@@ -1,6 +1,9 @@
 function CheckoutInput({id, label, placeholder}) {
 	return (
-		<div className="flex flex-col mb-6">
+		<div
+			className={`${
+				id === "address" ? "md:w-full" : "checkout-input"
+			} flex flex-col mb-6 `}>
 			<label htmlFor={id} className="mb-2 text-xs font-bold">
 				{label}
 			</label>

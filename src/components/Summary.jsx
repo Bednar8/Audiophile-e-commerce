@@ -21,9 +21,9 @@ function Summary() {
 		},
 	]
 	return (
-		<div className="bg-white rounded-lg px-6 py-8">
-			<h4 className="uppercase text-lg font-bold mb-7">summary</h4>
-			<ul className="flex justify-between items-center">
+		<div className="px-6 py-8 bg-white rounded-lg xl:w-1/3 xl:h-max">
+			<h4 className="text-lg font-bold uppercase mb-7">summary</h4>
+			<ul className="flex items-center justify-between">
 				<BasketProductSummary />
 				<p className="font-bold text-[15px] opacity-50">x1</p>
 			</ul>

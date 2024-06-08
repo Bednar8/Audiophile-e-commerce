@@ -15,6 +15,10 @@ function Layout() {
 	const {isMenuOpen} = useMenuMobile()
 	const {isBasketOpen} = useBasket()
 
+	if (location.pathname === "/checkout")
+		document.body.style.backgroundColor = "#F1F1F1"
+	else document.body.style.backgroundColor = "#FFF"
+
 	if (isMenuOpen || isBasketOpen) document.body.style.overflowY = "hidden"
 	else document.body.style.overflowY = "auto"
 
