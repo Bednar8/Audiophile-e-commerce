@@ -1,26 +1,7 @@
-import {Link} from "react-router-dom"
-
-function ButtonLink({
-	children,
-	type = "primary",
-	productSlug,
-	isWidthFull = false,
-	dest = "product",
-}) {
-	const getPath = () => {
-		if (dest === "product") {
-			return `/product/${productSlug}`
-		} else if (dest === "checkout") {
-			return `/checkout`
-		} else if (dest === "home") {
-			return `/`
-		} else {
-			return "/"
-		}
-	}
+function Button({children, isWidthFull = false, type = "primary", onClick}) {
 	return (
-		<Link
-			to={getPath()}
+		<button
+			onClick={onClick}
 			className={`${
 				isWidthFull ? "w-full" : "w-[160px]"
 			} relative z-20   h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${
@@ -33,8 +14,8 @@ function ButtonLink({
 					: ""
 			}`}>
 			{children}
-		</Link>
+		</button>
 	)
 }
 
-export default ButtonLink
+export default Button

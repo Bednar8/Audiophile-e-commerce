@@ -1,7 +1,9 @@
+import {useConfirmOrder} from "../context/ConfirmContext"
 import BasketProductSummary from "./BasketProductSummary"
-import ButtonLink from "./ButtonLink"
+import Button from "./Button"
 
 function Summary() {
+	const {handleConfirm} = useConfirmOrder()
 	const paySummary = [
 		{
 			name: "total",
@@ -44,7 +46,9 @@ function Summary() {
 					</div>
 				))}
 			</div>
-			<ButtonLink isWidthFull={true}>continue & pay</ButtonLink>
+			<Button isWidthFull={true} confirm={true} onClick={handleConfirm}>
+				continue & pay
+			</Button>
 		</div>
 	)
 }

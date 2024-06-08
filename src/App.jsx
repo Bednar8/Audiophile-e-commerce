@@ -11,6 +11,7 @@ import Categorie from "./pages/Categorie"
 import {ProductsProvider} from "./context/ProductsContext"
 import {BasketProvider} from "./context/BasketContext"
 import {MenuMobileProvider} from "./context/MenuMobileContext"
+import {ConfirmProvider} from "./context/ConfirmContext"
 
 const router = createBrowserRouter([
 	{
@@ -29,11 +30,13 @@ const router = createBrowserRouter([
 function App() {
 	return (
 		<ProductsProvider>
-			<BasketProvider>
-				<MenuMobileProvider>
-					<RouterProvider router={router} />
-				</MenuMobileProvider>
-			</BasketProvider>
+			<ConfirmProvider>
+				<BasketProvider>
+					<MenuMobileProvider>
+						<RouterProvider router={router} />
+					</MenuMobileProvider>
+				</BasketProvider>
+			</ConfirmProvider>
 		</ProductsProvider>
 	)
 }

@@ -4,6 +4,7 @@ import CheckoutInput from "../components/CheckoutInput"
 import Summary from "../components/Summary"
 
 import cashoOnDeliveryIcon from "../assets/checkout/icon-cash-on-delivery.svg"
+import ThanksForOrder from "../components/ThanksForOrder"
 
 function Checkout() {
 	const [formData, setFormData] = useState()
@@ -219,6 +220,7 @@ function Checkout() {
 					</div>
 				</div>
 			</div>
+			<ThanksForOrder />
 		</div>
 	)
 }
