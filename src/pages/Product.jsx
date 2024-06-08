@@ -13,6 +13,7 @@ import ButtonGoBack from "../components/ButtonGoBack"
 function Product() {
 	const params = useParams()
 	const {products, isLoading} = useProducts()
+
 	const currentProduct = products.filter(
 		(product) => product.slug === params.productSlug
 	)[0]

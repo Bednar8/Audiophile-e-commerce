@@ -12,6 +12,7 @@ import {ProductsProvider} from "./context/ProductsContext"
 import {BasketProvider} from "./context/BasketContext"
 import {MenuMobileProvider} from "./context/MenuMobileContext"
 import {ConfirmProvider} from "./context/ConfirmContext"
+import {ProductQuantityProvider} from "./context/ProductQuantityContext"
 
 const router = createBrowserRouter([
 	{
@@ -33,7 +34,9 @@ function App() {
 			<ConfirmProvider>
 				<BasketProvider>
 					<MenuMobileProvider>
-						<RouterProvider router={router} />
+						<ProductQuantityProvider>
+							<RouterProvider router={router} />
+						</ProductQuantityProvider>
 					</MenuMobileProvider>
 				</BasketProvider>
 			</ConfirmProvider>

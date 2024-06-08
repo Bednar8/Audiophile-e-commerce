@@ -48,11 +48,11 @@ function Nav() {
 						: isNavShow
 						? "top-0 bg-black-secondary"
 						: "top-[-100px]"
-				}  nav fixed left-0 items-center text-white h-[100px] w-full z-40`}>
+				}  nav fixed left-0 items-center text-white h-[100px] w-full z-20`}>
 				<div
 					className={`${
 						isScrollZero ? "after:w-full  after:px-4" : "after:w-0"
-					} relative lg:max-w-[1200px] md:max-w-[760px] h-full mx-auto flex justify-between after:content-[''] after:absolute  after:transition-[width] after:bottom-0 after:left-0 after:bg-[#979797] after:h-[1px] after:duration-300`}>
+					} relative lg:max-w-[1200px] md:max-w-[760px] h-full mx-auto flex justify-between after:content-[''] after:absolute  after:transition-[width] after:bottom-0 after:left-0 after:bg-[#979797] after:h-[1px] after:duration-300 after:z-0`}>
 					<button
 						className="p-3 pr-4 m-2 md:mr-10 lg:hidden"
 						onClick={handleMenu}>

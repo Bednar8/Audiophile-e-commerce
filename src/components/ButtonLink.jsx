@@ -6,6 +6,7 @@ function ButtonLink({
 	productSlug,
 	isWidthFull = false,
 	dest = "product",
+	onClick,
 }) {
 	const getPath = () => {
 		if (dest === "product") {
@@ -20,10 +21,11 @@ function ButtonLink({
 	}
 	return (
 		<Link
+			onClick={onClick}
 			to={getPath()}
 			className={`${
 				isWidthFull ? "w-full" : "w-[160px]"
-			} relative z-20   h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${
+			} relative z-[5]   h-[48px] uppercase font-[600] text-sm transition-colors flex justify-center items-center ${
 				type == "primary"
 					? "bg-orange-main text-white hover:bg-orange-secondary"
 					: type == "black"

@@ -4,7 +4,7 @@ import BasketProductSummary from "./BasketProductSummary"
 import ButtonLink from "./ButtonLink"
 
 function ThanksForOrder() {
-	const {isConfirmOrder} = useConfirmOrder()
+	const {isConfirmOrder, handleConfirm} = useConfirmOrder()
 	const paySummary = [
 		{
 			name: "total",
@@ -28,8 +28,8 @@ function ThanksForOrder() {
 		<>
 			<div
 				className={`${
-					isConfirmOrder && "left-1/2 translate-x-[-50%]"
-				} max-w-[540px]  mx-auto h-full fixed left-[-120%] top-1/2 translate-y-[-50%] z-50  w-full transition-all overflow-y-auto mt-10`}>
+					isConfirmOrder ? "left-1/2 translate-x-[-50%]" : "left-[-120%]"
+				} max-w-[540px]  mx-auto h-full fixed  top-1/2 translate-y-[-50%] z-50  w-full transition-all overflow-y-auto mt-10`}>
 				<div className="absolute flex flex-col items-center w-full h-max rounded-br-xl rounded-bl-xl md:flex-row md:pb-10 md:pt-16">
 					<div className="p-8 mx-4 bg-white rounded-lg md:mx-8 md:w-[540px]">
 						<img src={doneIcon} alt="" />
@@ -58,7 +58,10 @@ function ThanksForOrder() {
 									<p className="mt-2 text-lg font-bold">$ 5,146</p>
 								</div>
 							</div>
-							<ButtonLink isWidthFull={true} dest="home">
+							<ButtonLink
+								isWidthFull={true}
+								dest="home"
+								onClick={handleConfirm}>
 								Back to home
 							</ButtonLink>
 						</div>

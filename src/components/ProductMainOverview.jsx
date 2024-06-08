@@ -1,8 +1,14 @@
-import ButtonLink from "./ButtonLink"
 import {useMediaQuery} from "react-responsive"
 import QuantityButton from "./QuantityButton"
+import Button from "./Button"
+import {useBasket} from "../context/BasketContext"
+// import {useEffect, useState} from "react"
+import {useProductQuantity} from "../context/ProductQuantityContext"
 
 function ProductMainOverview({product}) {
+	const {handleAddToBasket, handleBasket} = useBasket()
+	const {productQuantity} = useProductQuantity()
+
 	const isTablet = useMediaQuery({query: "(min-width: 768px)"})
 	const isDesktop = useMediaQuery({query: "(min-width: 1280px)"})
 
@@ -36,12 +42,16 @@ function ProductMainOverview({product}) {
 				</p>
 				<div className="flex items-center justify-start gap-4">
 					<QuantityButton />
-					<ButtonLink
+					<Button
 						type="primary"
 						productId={product.id}
-						destination="basket">
+						onClick={() => {
+							product.quantity = productQuantity
+							handleAddToBasket(product)
+							handleBasket()
+						}}>
 						add to cart
-					</ButtonLink>
+					</Button>
 				</div>
 			</div>
 		</div>

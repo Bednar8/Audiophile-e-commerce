@@ -13,24 +13,35 @@ import {useConfirmOrder} from "../context/ConfirmContext"
 function Layout() {
 	const location = useLocation()
 
-	const {isMenuOpen} = useMenuMobile()
-	const {isBasketOpen} = useBasket()
-	const {isConfirmOrder} = useConfirmOrder()
+	const {isMenuOpen, setIsMenuOpen} = useMenuMobile()
+	const {isBasketOpen, setIsBasketOpen} = useBasket()
+	const {isConfirmOrder, setIsConfirmOrder} = useConfirmOrder()
 
 	if (location.pathname === "/checkout")
 		document.body.style.backgroundColor = "#F1F1F1"
 	else document.body.style.backgroundColor = "#FFF"
 
-	if (isMenuOpen || isBasketOpen || isConfirmOrder)
-		document.body.style.overflowY = "hidden"
+	if (isMenuOpen || isConfirmOrder) document.body.style.overflowY = "hidden"
 	else document.body.style.overflowY = "auto"
+
+	function check(e) {
+		console.log(e.target)
+	}
+
+	document.body.addEventListener("click", check)
 
 	return (
 		<>
 			<ScrollToTop />
 			<div className="w-full">
 				{(isMenuOpen || isBasketOpen || isConfirmOrder) && (
-					<div className="fixed inset-0 w-dvw h-dvh bg-[#00000584] z-10"></div>
+					<div
+						className="fixed inset-0 w-dvw h-dvh bg-[#00000584] z-10"
+						onClick={() => {
+							setIsBasketOpen(false)
+							setIsMenuOpen(false)
+							setIsConfirmOrder(false)
+						}}></div>
 				)}
 				<Nav />
 				<CategorieList isMenuMobile={true} />

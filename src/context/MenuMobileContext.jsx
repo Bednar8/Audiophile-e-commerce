@@ -11,7 +11,7 @@ function MenuMobileProvider({children}) {
 	}
 
 	return (
-		<MenuMobileContext.Provider value={{handleMenu, isMenuOpen}}>
+		<MenuMobileContext.Provider value={{handleMenu, isMenuOpen, setIsMenuOpen}}>
 			{children}
 		</MenuMobileContext.Provider>
 	)

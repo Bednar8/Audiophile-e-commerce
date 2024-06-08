@@ -29,6 +29,7 @@ function BasketProvider({children}) {
 				handleRemoveFromBasket,
 				handleBasket,
 				isBasketOpen,
+				setIsBasketOpen,
 			}}>
 			{children}
 		</BasketContext.Provider>
