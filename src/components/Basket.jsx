@@ -1,12 +1,16 @@
-import {useState} from "react"
 import {useBasket} from "../context/BasketContext"
 import BasketProduct from "./BasketProduct"
 import ButtonLink from "./ButtonLink"
 
 function Basket() {
-	const {isBasketOpen, handleBasket, setIsBasketOpen, productsInBasket} =
-		useBasket()
-	const [total, setTotal] = useState(1000)
+	const {
+		isBasketOpen,
+		handleBasket,
+		setIsBasketOpen,
+		productsInBasket,
+		totalPrice,
+		handleRemoveAll,
+	} = useBasket()
 
 	return (
 		<div
@@ -22,7 +26,9 @@ function Basket() {
 						<p className="text-lg font-bold uppercase">
 							Cart <span>({productsInBasket.length})</span>
 						</p>
-						<button className="text-[15px] opacity-50 underline">
+						<button
+							className="text-[15px] opacity-50 underline"
+							onClick={handleRemoveAll}>
 							Remove all
 						</button>
 					</div>
@@ -36,7 +42,7 @@ function Basket() {
 					<div className="flex items-center justify-between mb-6">
 						<p className="uppercase opacity-50 text-[15px]">Total</p>
 						<p className="text-lg font-bold">
-							$ {total.toLocaleString("en-US")}
+							$ {totalPrice.toLocaleString("en-US")}
 						</p>
 					</div>
 

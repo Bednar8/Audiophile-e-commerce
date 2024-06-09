@@ -1,4 +1,5 @@
 function BasketProductSummary({product}) {
+	console.log(product)
 	const formatPrice = product.price.toLocaleString("en-US")
 	return (
 		<div className="flex items-center justify-center gap-4">

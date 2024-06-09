@@ -1,21 +1,11 @@
-import {useState} from "react"
+// import {useState} from "react"
+import {useBasket} from "../context/BasketContext"
 
 function BasketQuantityButton({small = true, product}) {
-	const [quantity, setQuantity] = useState(product.quantity)
+	// const [quantity, setQuantity] = useState(product.quantity)
+	const {updateQuantity} = useBasket()
 
 	console.log(product)
-
-	const increaseCurrentProductQuantity = () => {
-		setQuantity(quantity + 1)
-
-		product.quantity = quantity + 1
-	}
-
-	const decreaseCurrentProductQuantity = () => {
-		setQuantity(quantity - 1)
-
-		product.quantity = quantity - 1
-	}
 
 	return (
 		<div
@@ -24,16 +14,16 @@ function BasketQuantityButton({small = true, product}) {
 			} flex items-center justify-between bg-gray-main `}>
 			<button
 				className="w-full h-full transition-colors hover:text-orange-main"
-				onClick={decreaseCurrentProductQuantity}
-				disabled={quantity <= 0}>
+				onClick={() => updateQuantity(product.id, product.quantity - 1)}
+				disabled={product.quantity <= 1}>
 				-
 			</button>
 			<span className="w-full text-center text-[13px] font-bold">
-				{quantity}
+				{product.quantity}
 			</span>
 			<button
 				className="w-full h-full transition-colors hover:text-orange-main"
-				onClick={increaseCurrentProductQuantity}>
+				onClick={() => updateQuantity(product.id, product.quantity + 1)}>
 				+
 			</button>
 		</div>

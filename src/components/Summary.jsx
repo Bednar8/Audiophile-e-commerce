@@ -1,13 +1,19 @@
+import {useBasket} from "../context/BasketContext"
 import {useConfirmOrder} from "../context/ConfirmContext"
-import BasketProductSummary from "./BasketProductSummary"
+import BasketProduct from "./BasketProduct"
+// import BasketProductSummary from "./BasketProductSummary"
 import Button from "./Button"
 
 function Summary() {
 	const {handleConfirm} = useConfirmOrder()
+	const {productsInBasket} = useBasket()
+	const {totalPrice} = useBasket()
+
+	console.log(totalPrice)
 	const paySummary = [
 		{
 			name: "total",
-			cost: 5311,
+			cost: totalPrice,
 		},
 		{
 			name: "shipping",
@@ -26,7 +32,11 @@ function Summary() {
 		<div className="px-6 py-8 bg-white rounded-lg xl:w-1/3 xl:h-max">
 			<h4 className="text-lg font-bold uppercase mb-7">summary</h4>
 			<ul className="flex items-center justify-between">
-				<BasketProductSummary />
+				{productsInBasket.length > 0
+					? productsInBasket.map((product, i) => (
+							<BasketProduct product={product} key={i} />
+					  ))
+					: "You don`t have any product in basket"}
 				<p className="font-bold text-[15px] opacity-50">x1</p>
 			</ul>
 			<div className="my-8">

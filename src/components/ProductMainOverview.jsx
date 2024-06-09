@@ -47,7 +47,7 @@ function ProductMainOverview({product}) {
 						productId={product.id}
 						onClick={() => {
 							product.quantity = productQuantity
-							handleAddToBasket(product)
+							handleAddToBasket(product, productQuantity)
 							handleBasket()
 							resetQuantity()
 						}}>
