@@ -4,6 +4,8 @@ import BasketProduct from "./BasketProduct"
 // import BasketProductSummary from "./BasketProductSummary"
 import Button from "./Button"
 
+import {shipping, vat} from "../config"
+
 function Summary() {
 	const {handleConfirm} = useConfirmOrder()
 	const {productsInBasket} = useBasket()
@@ -17,28 +19,27 @@ function Summary() {
 		},
 		{
 			name: "shipping",
-			cost: 50,
+			cost: shipping,
 		},
 		{
-			name: "vat",
-			cost: 1024,
+			name: "vat (included)",
+			cost: (totalPrice * vat).toFixed(2),
 		},
 		{
 			name: "grand total",
-			cost: 5361,
+			cost: totalPrice + shipping,
 		},
 	]
 	return (
 		<div className="px-6 py-8 bg-white rounded-lg xl:w-1/3 xl:h-max">
 			<h4 className="text-lg font-bold uppercase mb-7">summary</h4>
-			<ul className="flex items-center justify-between">
+			<div className="flex flex-col items-center justify-between">
 				{productsInBasket.length > 0
 					? productsInBasket.map((product, i) => (
-							<BasketProduct product={product} key={i} />
+							<BasketProduct product={product} key={i} summary={true} />
 					  ))
 					: "You don`t have any product in basket"}
-				<p className="font-bold text-[15px] opacity-50">x1</p>
-			</ul>
+			</div>
 			<div className="my-8">
 				{paySummary.map((el, i) => (
 					<div

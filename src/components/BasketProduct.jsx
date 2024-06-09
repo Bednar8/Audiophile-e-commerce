@@ -1,12 +1,15 @@
 import BasketProductSummary from "./BasketProductSummary"
 import BasketQuantityButton from "./BasketQuantityButton"
 
-function BasketProduct({product}) {
-	console.log(product)
+function BasketProduct({product, summary = false}) {
 	return (
-		<div className="flex items-center justify-between my-8">
+		<div className="flex items-center justify-between w-full my-8">
 			<BasketProductSummary product={product} />
-			<BasketQuantityButton product={product} />
+			{summary ? (
+				<p className="opacity-50 font-bold text-[15px]">x{product.quantity}</p>
+			) : (
+				<BasketQuantityButton product={product} />
+			)}
 		</div>
 	)
 }

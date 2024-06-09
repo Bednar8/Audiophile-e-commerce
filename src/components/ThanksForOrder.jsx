@@ -1,10 +1,12 @@
 import {useEffect, useState} from "react"
 import doneIcon from "../assets/checkout/icon-order-confirmation.svg"
 import {useConfirmOrder} from "../context/ConfirmContext"
-import BasketProductSummary from "./BasketProductSummary"
 import ButtonLink from "./ButtonLink"
+import {useBasket} from "../context/BasketContext"
+import BasketProduct from "./BasketProduct"
 
 function ThanksForOrder() {
+	const {productsInBasket} = useBasket()
 	const {isConfirmOrder, handleConfirm, closeConfirm} = useConfirmOrder()
 	const [modalStyle, setModalStyle] = useState({
 		position: "fixed",
@@ -48,8 +50,17 @@ function ThanksForOrder() {
 						<div className="flex flex-col my-6 rounded-lg bg-gray-main">
 							<div className="flex flex-col p-6">
 								<div className="flex items-center justify-between">
-									<BasketProductSummary />
-									<p className="font-bold text-[15px] opacity-50">x1</p>
+									<div className="flex flex-col items-center justify-between w-full">
+										{productsInBasket.length > 0
+											? productsInBasket.map((product, i) => (
+													<BasketProduct
+														product={product}
+														key={i}
+														summary={true}
+													/>
+											  ))
+											: "You don`t have any product in basket"}
+									</div>
 								</div>
 
 								<p className="text-xs font-bold border-t opacity-50 border-[#979797] text-center py-3 mt-3">

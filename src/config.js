@@ -16,4 +16,5 @@ export const categories = [
 	},
 ]
 
-export const vat = 23
+export const vat = 0.23
+export const shipping = 50
