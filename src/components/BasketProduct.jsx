@@ -1,11 +1,11 @@
 import BasketProductSummary from "./BasketProductSummary"
-import QuantityButton from "./QuantityButton"
+import BasketQuantityButton from "./BasketQuantityButton"
 
-function BasketProduct() {
+function BasketProduct({product}) {
 	return (
 		<div className="flex items-center justify-between my-8">
-			<BasketProductSummary />
-			<QuantityButton small={true} />
+			<BasketProductSummary product={product} />
+			<BasketQuantityButton product={product} />
 		</div>
 	)
 }

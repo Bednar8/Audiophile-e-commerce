@@ -3,6 +3,7 @@ import {useProductQuantity} from "../context/ProductQuantityContext"
 function QuantityButton({small = false}) {
 	const {productQuantity, increaseQuantity, decreaseQuantity} =
 		useProductQuantity()
+
 	return (
 		<div
 			className={`${

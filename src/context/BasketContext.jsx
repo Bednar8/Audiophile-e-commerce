@@ -7,8 +7,16 @@ function BasketProvider({children}) {
 	const [productsInBasket, setProductsInBasket] = useState([])
 	const [isBasketOpen, setIsBasketOpen] = useState(false)
 
-	const handleAddToBasket = (product) => {
-		setProductsInBasket((productsInBasket) => [...productsInBasket, product])
+	const handleAddToBasket = (product, quantity = 3) => {
+		console.log(product)
+		console.log(quantity)
+		setProductsInBasket((productsInBasket) => {
+			if (productsInBasket.includes(product)) {
+				product.quantity += quantity
+				return [...productsInBasket]
+			}
+			return [...productsInBasket, product]
+		})
 	}
 
 	const handleRemoveFromBasket = (product) => {
@@ -21,6 +29,10 @@ function BasketProvider({children}) {
 		setIsBasketOpen(!isBasketOpen)
 	}
 
+	const closeBasket = () => {
+		setIsBasketOpen(false)
+	}
+
 	return (
 		<BasketContext.Provider
 			value={{
@@ -30,6 +42,7 @@ function BasketProvider({children}) {
 				handleBasket,
 				isBasketOpen,
 				setIsBasketOpen,
+				closeBasket,
 			}}>
 			{children}
 		</BasketContext.Provider>

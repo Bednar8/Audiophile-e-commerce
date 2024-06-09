@@ -7,7 +7,7 @@ import {useProductQuantity} from "../context/ProductQuantityContext"
 
 function ProductMainOverview({product}) {
 	const {handleAddToBasket, handleBasket} = useBasket()
-	const {productQuantity} = useProductQuantity()
+	const {productQuantity, resetQuantity} = useProductQuantity()
 
 	const isTablet = useMediaQuery({query: "(min-width: 768px)"})
 	const isDesktop = useMediaQuery({query: "(min-width: 1280px)"})
@@ -49,6 +49,7 @@ function ProductMainOverview({product}) {
 							product.quantity = productQuantity
 							handleAddToBasket(product)
 							handleBasket()
+							resetQuantity()
 						}}>
 						add to cart
 					</Button>

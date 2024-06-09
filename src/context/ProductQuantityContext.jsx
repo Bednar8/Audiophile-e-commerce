@@ -16,12 +16,18 @@ function ProductQuantityProvider({children}) {
 		)
 	}
 
+	const resetQuantity = () => {
+		setProductQuantity(1)
+	}
+
 	return (
 		<ProductQuantityContext.Provider
 			value={{
 				productQuantity,
 				increaseQuantity,
 				decreaseQuantity,
+				resetQuantity,
+				setProductQuantity,
 			}}>
 			{children}
 		</ProductQuantityContext.Provider>

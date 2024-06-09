@@ -6,12 +6,17 @@ export const MenuMobileContext = createContext()
 function MenuMobileProvider({children}) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-	function handleMenu() {
+	const handleMenu = () => {
 		setIsMenuOpen(!isMenuOpen)
 	}
 
+	const closeMenu = () => {
+		setIsMenuOpen(false)
+	}
+
 	return (
-		<MenuMobileContext.Provider value={{handleMenu, isMenuOpen, setIsMenuOpen}}>
+		<MenuMobileContext.Provider
+			value={{handleMenu, isMenuOpen, setIsMenuOpen, closeMenu}}>
 			{children}
 		</MenuMobileContext.Provider>
 	)

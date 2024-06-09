@@ -10,11 +10,16 @@ function ConfirmProvider({children}) {
 		setIsConfirmOrder(!isConfirmOrder)
 	}
 
+	const closeConfirm = () => {
+		setIsConfirmOrder(false)
+	}
+
 	return (
 		<ConfirmContext.Provider
 			value={{
 				handleConfirm,
 				isConfirmOrder,
+				closeConfirm,
 			}}>
 			{children}
 		</ConfirmContext.Provider>

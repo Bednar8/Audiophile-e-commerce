@@ -13,22 +13,22 @@ import {useConfirmOrder} from "../context/ConfirmContext"
 function Layout() {
 	const location = useLocation()
 
-	const {isMenuOpen, setIsMenuOpen} = useMenuMobile()
-	const {isBasketOpen, setIsBasketOpen} = useBasket()
-	const {isConfirmOrder, setIsConfirmOrder} = useConfirmOrder()
+	const {isMenuOpen, closeMenu} = useMenuMobile()
+	const {isBasketOpen, closeBasket} = useBasket()
+	const {isConfirmOrder, closeConfirm} = useConfirmOrder()
 
 	if (location.pathname === "/checkout")
 		document.body.style.backgroundColor = "#F1F1F1"
 	else document.body.style.backgroundColor = "#FFF"
 
-	if (isMenuOpen || isConfirmOrder) document.body.style.overflowY = "hidden"
+	if (isMenuOpen) document.body.style.overflowY = "hidden"
 	else document.body.style.overflowY = "auto"
 
-	function check(e) {
-		console.log(e.target)
-	}
+	// function check(e) {
+	// 	console.log(e.target)
+	// }
 
-	document.body.addEventListener("click", check)
+	// document.body.addEventListener("click", check)
 
 	return (
 		<>
@@ -38,9 +38,9 @@ function Layout() {
 					<div
 						className="fixed inset-0 w-dvw h-dvh bg-[#00000584] z-10"
 						onClick={() => {
-							setIsBasketOpen(false)
-							setIsMenuOpen(false)
-							setIsConfirmOrder(false)
+							closeBasket()
+							closeMenu()
+							closeConfirm()
 						}}></div>
 				)}
 				<Nav />
