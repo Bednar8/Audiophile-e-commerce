@@ -1,6 +1,11 @@
 module.exports = {
 	root: true,
-	env: {browser: true, es2020: true},
+	env: {
+		browser: true,
+		node: true, // Dodaj node: true
+		es2020: true,
+		commonjs: true, // Dodaj commonjs: true
+	},
 	extends: [
 		"eslint:recommended",
 		"plugin:react/recommended",
@@ -19,5 +24,6 @@ module.exports = {
 		],
 		"react/prop-types": "off",
 		"no-mixed-spaces-and-tabs": 0,
+		"no-undef": "error",
 	},
 }

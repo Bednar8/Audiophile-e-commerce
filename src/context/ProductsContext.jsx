@@ -11,11 +11,13 @@ function ProductsProvider({children}) {
 		async function fetchProducts() {
 			try {
 				setIsLoading(true)
-				const res = await fetch("http://localhost:3001/products")
+				const res = await fetch(
+					"https://raw.githubusercontent.com/Bednar8/Audiophile-e-commerce/main/data.json"
+				)
 				if (!res.ok) throw new Error("Network response was not ok")
 				const data = await res.json()
 				console.log(data)
-				setProducts(data)
+				setProducts(data.products)
 			} catch (error) {
 				console.error("Error fetching products:", error)
 			} finally {
