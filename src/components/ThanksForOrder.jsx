@@ -5,15 +5,20 @@ import ButtonLink from "./ButtonLink"
 import {useBasket} from "../context/BasketContext"
 import BasketProduct from "./BasketProduct"
 
+import {shipping} from "../config"
+
 function ThanksForOrder() {
 	const {productsInBasket} = useBasket()
 	const {isConfirmOrder, handleConfirm, closeConfirm} = useConfirmOrder()
+	const {totalPrice} = useBasket()
 	const [modalStyle, setModalStyle] = useState({
 		position: "fixed",
 		top: "50px",
 		left: "50%",
 		transform: "translateX(-50%)",
 	})
+
+	const curShipping = totalPrice > 0 ? shipping : 0
 
 	useEffect(() => {
 		if (isConfirmOrder) {
@@ -69,7 +74,9 @@ function ThanksForOrder() {
 							</div>
 							<div className="px-6 py-4 text-white rounded-b-lg bg-black-secondary">
 								<p className="opacity-50 uppercase text-[15px]">grand total</p>
-								<p className="mt-2 text-lg font-bold">$ 5,146</p>
+								<p className="mt-2 text-lg font-bold">
+									$ {totalPrice + curShipping}
+								</p>
 							</div>
 						</div>
 						<ButtonLink isWidthFull={true} dest="home" onClick={handleConfirm}>

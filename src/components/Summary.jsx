@@ -11,7 +11,8 @@ function Summary() {
 	const {productsInBasket} = useBasket()
 	const {totalPrice} = useBasket()
 
-	console.log(totalPrice)
+	const curShipping = totalPrice > 0 ? shipping : 0
+
 	const paySummary = [
 		{
 			name: "total",
@@ -19,7 +20,7 @@ function Summary() {
 		},
 		{
 			name: "shipping",
-			cost: shipping,
+			cost: curShipping,
 		},
 		{
 			name: "vat (included)",
@@ -27,7 +28,7 @@ function Summary() {
 		},
 		{
 			name: "grand total",
-			cost: totalPrice + shipping,
+			cost: totalPrice + curShipping,
 		},
 	]
 	return (

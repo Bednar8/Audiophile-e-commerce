@@ -10,8 +10,6 @@ function BasketProvider({children}) {
 
 	const productsQuantity = productsInBasket.map((product) => product.quantity)
 
-	console.log(productsQuantity)
-
 	const handleAddToBasket = (newProduct, quantity) => {
 		setProductsInBasket((productsInBasket) => {
 			const productExists = productsInBasket.find(
