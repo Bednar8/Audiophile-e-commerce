@@ -1,8 +1,13 @@
-# React + Vite
+Frontend Mentor Project - Audiophile e-commerce website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project, I used React with Context API for managing application state, React Router for efficient navigation throughout the store while gracefully updating the URL, and Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+You can see site: [audiophile-bednar.netlify.app](https://audiophile-bednar.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Screenshot
+
+<img src="./src/images/Zrzut ekranu 2024-07-13 131023.png" width="500">
+<img src="./src/images/Zrzut ekranu 2024-07-13 131034.png" width="500">
+<img src="./src/images/Zrzut ekranu 2024-07-13 131117.png" width="300">
+<img src="./src/images/Zrzut ekranu 2024-07-13 131146.png" width="300">
+<img src="./src/images/Zrzut ekranu 2024-07-13 131237.png" width="300">
